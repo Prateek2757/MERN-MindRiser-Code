@@ -1,0 +1,52 @@
+body {
+    background-color: aqua;
+}
+
+h1{
+    text-align: center;
+    color: aliceblue;
+
+}
+
+p {
+font-style: italic;
+
+}
+
+a{
+    font-size: 20px;
+     text-decoration: none;
+     cursor: pointer;
+     border: none;
+     
+     color: #000;
+     
+ }
+ a:hover{
+     border-bottom: 4px solid rgb(31, 208, 15);
+     max-width:55px;
+ }
+
+ p:hover{
+    color: blue;
+    cursor:copy;
+
+ }
+
+ table{
+    border: solid rgb(32, 89, 18);
+    width: 100%;
+    border-collapse: collapse;
+ }
+ th,td{
+    padding: 10px;
+    text-align: center;
+    border: solid #95692c63;
+    
+ }
+ tr:hover{
+    background-color: #2da9b2;
+ }
+ tr:nth-child(4) {
+    background-color: #d11a1a;
+  }
