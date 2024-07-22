@@ -16,20 +16,6 @@ let calculateSumm = (a, b) => {
 };
 //  console.log(calculateSumm(8,9));
 
-/* let numbers =  [7 ,8,9 ,10];
- let numSum = 0;
-
-
-numbers.forEach((summ)=> {
-
-    numSum += summ ;
-
-
- console.log(summ);
-
-
-}) */
-
 
 
 let number = (...args) => {
