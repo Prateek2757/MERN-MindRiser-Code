@@ -30,15 +30,7 @@ numbers.forEach((summ)=> {
 
 }) */
 
-/* 
-function sumOfNumber(...args){
-let sum = 0;
 
-for(let arg of args)
-    sum += arg;
-console.log(sum);
-
-}  */
 
 let number = (...args) => {
   let value = 0;
