@@ -58,25 +58,26 @@ let users = [
   },
 ];
 
-let userStatus = (users) => {mind
-  
-
+let userStatus = (users) => {
   for (i = 0; i < users.length; i++) {
     // if (users[i].hasPaidStatus || users[i].hasScholarship) {
     //   console.log(`${users[i].name} has Able to give exm `);
     // } else {
     //   console.log(`${users[i].name} hasnot Able to give exam `);
-      if(users[i].hasAttendence && (users[i].hasPaidStatus || users[i].hasScholarship)){
-        console.log(`${users[i].name} can give Exam`);
-      }
-      // else if(users[i].hasAttendence && users[i].hasScholarship){
-      //   console.log(`${users[i].name} Has Able To give Exam`);
-      // }
-      else{
-        console.log(`${users[i].name} can not Give exam`);
-      }
-
-  }}
+    if (
+      users[i].hasAttendence &&
+      (users[i].hasPaidStatus || users[i].hasScholarship)
+    ) {
+      console.log(`${users[i].name} can give Exam`);
+    }
+    // else if(users[i].hasAttendence && users[i].hasScholarship){
+    //   console.log(`${users[i].name} Has Able To give Exam`);
+    // }
+    else {
+      console.log(`${users[i].name} can not Give exam`);
+    }
+  }
+};
 userStatus(users);
 
 let user = {
@@ -93,12 +94,114 @@ let checkPassword = (checkEmail, checkPasswod) => {
   }
 };
 
-
 //checkPassword("ram@ram.com", "ram-password");
 //checkPassword("ram@ram.com", "ram-pasword");
 
-let checkPasswordd = (checkEmail,checkPassword) =>{
-         const message = user.email === checkEmail? `${user.name} can login` : `${user.name} cannot login`;
-         console.log(message);
+let checkPasswordd = (checkEmail, checkPassword) => {
+  const message =
+    user.email === checkEmail
+      ? `${user.name} can login`
+      : `${user.name} cannot login`;
+  console.log(message);
+};
+checkPasswordd("ram@ram.com");
+
+/* 
+
+    create a function  getMonthName  to get the name of different months. 
+
+   let name =  getMonthName(1)
+   console.log(name)
+
+    TODO:
+    if i pass argument 1, it should give me the result of January and so n. 
+
+    if i pass other than 1 to 12, it should give not a valid input
+
+    
+*/
+
+/* 
+    if else vs switch
+*/
+
+// Easy to Understand
+
+function getMonthName(getMonthNum) {
+  if (getMonthNum === 1) {
+    return "january";
+  } else if (getMonthNum === 2) {
+    return "feb";
+  } else if (getMonthNum === 3) {
+    return "March";
+  } else if (getMonthNum === 4) {
+    return "April";
+  } else if (getMonthNum === 5) {
+    return "may";
+  } else if (getMonthNum === 6) {
+    return "june";
+  } else if (getMonthNum === 7) {
+    return "july";
+  } else if (getMonthNum === 8) {
+    return "Aug";
+  } else if (getMonthNum === 9) {
+    return "Sept";
+  } else if (getMonthNum === 10) {
+    return "Oct";
+  } else if (getMonthNum === 11) {
+    return "Nov";
+  } else if (getMonthNum === 12) {
+    return "Dec";
+  }
+  else {
+    return `Not Valid Input`
+  }
+  
 }
-checkPasswordd("ram@ram.com")
+
+let monthNamee = getMonthName(5)
+  console.log(monthNamee);
+
+//self Done Code little Complex
+function getMonthName(getMonthNum) {
+  let getNamess = [
+    "january",
+    "February",
+    "march",
+    "April",
+    "May",
+    "June",
+    "july",
+    "August",
+    "September",
+    "octuber",
+    "November",
+    "December",
+  ];
+  let indexRef = getMonthNum;
+  let index = indexRef - 1;
+  // for (i = 0; i < 12; i++) {
+  if (
+    (getMonthNum == 1 ||
+      getMonthNum == 2 ||
+      getMonthNum == 3 ||
+      getMonthNum == 4 ||
+      getMonthNum == 5 ||
+      getMonthNum == 6 ||
+      getMonthNum == 7 ||
+      getMonthNum == 8 ||
+      getMonthNum == 9 ||
+      getMonthNum == 10 ||
+      getMonthNum == 11 ||
+      getMonthNum == 12) &&
+    getMonthNum < 13
+  ) {
+    return getNamess[index];
+  } else {
+    return `Invalid Input`;
+  }
+  //}
+}
+
+let monthName = getMonthName(18);
+console.log(monthName);
