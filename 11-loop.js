@@ -157,7 +157,7 @@ function generateEvenNumber(num) {
   for (let i = 2; i <= num; i++) {
     // console.log(num);
     if (i % 2 == 0) {
-     // console.log(i);
+      // console.log(i);
     }
   }
 }
@@ -165,26 +165,20 @@ function generateEvenNumber(num) {
 generateEvenNumber(50);
 
 function identifyEvenNumber(num) {
-     if(isNaN(num)){
-          console.log("The provided data is not an number");
-     }
-     else if(num%2==1) {
-        console.log("Yes It is a ODd Number");
-     }
-
-     else{
-        console.log("It is even  a number")
-     }
+  if (isNaN(num)) {
+    console.log("The provided data is not an number");
+  } else if (num % 2 == 1) {
+    console.log("Yes It is a ODd Number");
+  } else {
+    console.log("It is even  a number");
+  }
 }
 
 identifyEvenNumber(2);
 identifyEvenNumber(1);
 identifyEvenNumber("hello");
 
-
-const nepaliNames = ["Aarav", "Aarya", "Aasha", "Anisha"]
-
-
+const nepaliNames = ["Aarav", "Aarya", "Aasha", "Anisha"];
 
 /* 
 
@@ -201,9 +195,37 @@ TODO:
     ] 
 
 */
-      for(i=0;i<nepaliNames.length;i++){
-          nepaliNames[i].add
 
-            console.log(nepaliNames[i]);
-      }  
-        
+let newArray = [
+  { name: 'Aarav', email: 'aarav@gmail.com', password: 'aarav0' },
+  { name: 'Aarya', email: 'aarya@gmail.com', password: 'aarya1' },
+  { name: 'Aasha', email: 'aasha@gmail.com', password: 'aasha2' },
+  { name: 'Anisha', email: 'anisha@gmail.com', password: 'anisha3' }
+] 
+    console.log(newArray);
+    
+    console.log(email1);
+
+
+/* 
+    code here
+
+ */
+
+//console.log(arr1) // should print me [2,3,6,8]
+
+/* 
+
+    array functions
+    
+*/
+
+let arr = () => {
+  let arr1 = [1, 2, 3, 4];
+  for (i = 0; i < arr1.length; i++) {
+    let arr2 = arr1[i] * 2;
+    console.log(arr2);
+  }
+};
+
+arr();
