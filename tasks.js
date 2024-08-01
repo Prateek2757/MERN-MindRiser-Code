@@ -231,7 +231,7 @@ let arr = () => {
   for (i = 0; i < arr1.length; i++) {
     let arr2 = [arr1[i] * 2];
 
-    console.log(arr2);
+    //console.log(arr2);
   }
 };
 
@@ -272,16 +272,23 @@ let todos = [
   
   */
 
-function todo() {
-  for (let i = 0; i < todos.length; i++) {
-    let output = todos[i].completed
-      ? `${todos[i].title} Is Completed`
-      : `${todos.title} Is Not   completed`;
-    console.log(output);
-  }
-}
+// for (let i = 0; i < todos.length; i++) {
+//   let output = todos[i].completed
+//     ? `${todos[i].title} Is Completed`
+//     : `${todos.title} Is Not   completed`;
+//   console.log(output);
+// }
 
-todo();
+todos.forEach((element) => {
+  /* if (element.completed) {
+    console.log("Completed");
+  } else {
+    console.log("Incompleted");
+  } */
+    
+   console.log(element.completed ? "Completed" : "Not Complted");
+
+});
 
 let countries = [
   {
@@ -1503,34 +1510,35 @@ let countries = [
   */
 
 let findCountryCode = (countriesName) => {
-  for (i = 0; i < countries.length; i++) {
-    if (countriesName.trim().toLowerCase() == countries[i].name.toLowerCase()) {
-     // console.log(countries[i].code);
-
+  let result = "Invalid input";
+  countries.forEach((country) => {
+    if (countriesName.trim().toLowerCase() == country.name.toLowerCase()) {
+      result = country.code;
       return;
     }
-  }
-  //console.log("Invalid Input");
+  });
+  return result;
 };
-findCountryCode(" nepal   ");
-findCountryCode("Nepalxx");
-findCountryCode("India");
 
+// for (i = 0; i < countries.length; i++) {
+//   if (countriesName.trim().toLowerCase() == countries[i].name.toLowerCase()) {
+//     console.log(countries[i].code);
+//         return;
+//   }
 
-const double = input=> input * 2
-const sum = (input,sec )=> input + sec
+// }
+// console.log("Invalid Input");
+//}
 
+console.log(findCountryCode(" nepal   "));
+console.log(findCountryCode("Nepalxx"));
+console.log(findCountryCode("India"));
+
+const double = (input) => input * 2;
+const sum = (input, sec) => input + sec;
 
 console.log(double(12));
-console.log(sum(12,20));
-
-
-let names = ["ram", "shyam", "hari"]
-let fakeUsers = []
-
-let ages = [10, 20, 30, 40, 50]
-let religions = ["hindu", "buddhist", "christian", "muslim", "others"]
-let ethnicities = ["bhramin", "chhetri", "newar", "others"]
+console.log(sum(12, 20));
 
 /* 
     Math.random()   //  0 to 1  
@@ -1563,17 +1571,80 @@ let ethnicities = ["bhramin", "chhetri", "newar", "others"]
 */
 
 /* first do for single user */
-let user = {
-    name: "ram",
-}
-let ethnicity = ethnicities[Math.floor(Math.random() * ethnicities.length)]
+let names = ["ram", "shyam", "hari"];
+let fakeUsers = [];
 
-let age = ages[Math.floor(Math.random() * ages.length)]
-let religion = religions[Math.floor(Math.random() * religions.length)]
-console.log(religion)
+let ages = [10, 20, 30];
+let religions = ["hindu", "buddhist", "christian", "muslim", "others"];
+let ethnicities = ["bhramin", "chhetri", "newar", "others"];
 
-for (i = 0; i < names.length; i++) {
-    let name = names[i]
-    fakeUsers[i] = { Name: `"${name}"`, Age: age, Religion: religion, Ethinicity: ethnicity }
+let generateRandom = (arr) => {
+  let randomNumber = [Math.floor(Math.random() * ages.length)];
+  let randomElement = arr[randomNumber];
+  return randomElement;
+};
+
+for (let i = 0; i < names.length; i++) {
+  let name = names[i];
+
+  fakeUsers[i] = {
+    Name: name,
+    Age: generateRandom(ages),
+    Religion: generateRandom(religions),
+    Ethinicity: generateRandom(ethnicities),
+  };
 }
-console.log(fakeUsers)
+console.log(fakeUsers);
+
+// names.forEach((name) => {
+//   fakeUsers = {
+//     Name: `"${name}"`,
+//     Age: age,
+//     Religion: religion,
+//     Ethinicity: ethnicity,
+//   };
+//   console.log(fakeUsers);
+// });
+
+// for (valueName of names) {
+
+//   fakeUsers = {
+//     Name: `${valueName}`,
+//     Age: age,
+//     Religion: religion,
+//     Ethinicity: ethnicity,
+//   };
+//   console.log(fakeUsers);
+// }
+
+// for (index in names){
+//    fakeUsers[index] = { Name: `"${names[index]}"`, Age: age, Religion: religion, Ethinicity: ethnicity }
+//  } console.log(fakeUsers)
+
+let dashboard = {
+  total: 100,
+  expired: 24,
+  out_of_stock: 20,
+};
+
+let nepali_digits = ["०", "१", "२", "३", "४", "५", "६", "७", "८", "९"];
+
+const convertValue = (value) => {
+  let numString = value.toString().trim();
+  let numSplit = numString.split("");
+  let nepaliStr = " ";
+
+  for (let i = 0; i < numSplit.length; i++) {
+    let digit = numSplit[i];
+
+    nepaliStr += nepali_digits[digit];
+  }
+  return nepaliStr;
+};
+
+dashboard.total = convertValue(dashboard.total);
+dashboard.expired = convertValue(dashboard.expired);
+dashboard.out_of_stock = convertValue(dashboard.out_of_stock)
+
+console.log(dashboard);
+
