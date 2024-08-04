@@ -254,7 +254,7 @@ let todos = [
     userId: 1,
     id: 3,
     title: "task three",
-    completed: true,
+    completed: true,    
   },
 ];
 
