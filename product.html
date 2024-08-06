@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product</title>
+  </head>
+  <body>
+    <button onclick="featchData()">Click to featch Data</button>
+    <h2 id="dataItem"></h2>
+    <ul id="productList"></ul>
+
+    <script>
+      let changeState = (state) => {
+        document.getElementById("dataItem").innerText = state;
+      };
+      let featchData = () => {
+        changeState("Loading");
+
+        fetch("https://dummyjson.com/products?11")
+          .then((res) => res.json())
+          .then((data) => {
+            //console.log(data);
+
+            changeState("Featched data list");
+            data.products.forEach((element) => {
+              // console.log(Object.keys (element).id);
+              document.getElementById(
+                "productList"
+              ).innerHTML += `<li> ${element.title} </li> 
+            `;
+              //console.log(element.title);
+            });
+
+            // for (let i = 0; i < data.products.length; i++) {
+            //   // console.log(data.products[i].title);
+
+            //   document.getElementById(
+            //     "productList"
+            //   ).innerHTML += `<li> ${data.products[i].title} </li>
+            // `;
+            // }
+          });
+      };
+    </script>
+  </body>
+</html>
