@@ -1,0 +1,44 @@
+body{
+    background-color: aquamarine;
+}
+
+.product-list{
+    display: grid;
+    grid-template-columns:1fr 1fr  1fr ;
+}
+.normal-product{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr  ; 
+    gap: 8px;
+}
+.product{
+    border: 1px solid black;
+    margin:12px;
+    padding: 12px;
+    position: relative;
+
+}
+
+
+.old-price{
+    text-decoration: line-through;
+    
+}
+
+.sale{
+    background-color: red;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    
+
+
+}
