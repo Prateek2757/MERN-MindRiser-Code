@@ -22,7 +22,7 @@ let products = [
     title: "kewyord",
     oldPrice: 1300,
     price: 100,
-    sale:true,
+    sale: true,
     description:
       "em ipsum, dolor sit amet consectetur adipisicing elit. Excepturi ea odio, perferendis,",
   },
