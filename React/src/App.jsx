@@ -1,7 +1,9 @@
 import ProductList from "./components/ProductList";
-import { Counter } from "./Counter";
+import { Counter, Timer } from "./Counter";
 import GoogleTabs from "./GoogleTabs";
+import Navbar from "./Navbar";
 import Theme from "./Theme";
+
 
 /**
  * 
@@ -11,10 +13,13 @@ export default function App() {
   return (
     <div>
      {/*  <ProductList/> */}
-     {/* <Counter/>
+        {/* 
       <Theme/>
-      */}
       <GoogleTabs/>
+        <Navbar/>
+      */}
+        <Counter/>
+        <Timer/>
     </div>
   );
 }

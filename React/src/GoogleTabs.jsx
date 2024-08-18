@@ -6,7 +6,7 @@ const GoogleTabs = () => {
   const [defaultValue, setColorValue] = useState("dark");
 
   return (
-    <> 
+    <>
     <div className= {` theme ${defaultValue =="dark" ? "dark" :"" }`} >
       {defaultValue == "dark" && <button className="lightbtn" onClick={()=>{setColorValue("light")}} >Light</button>}
       {defaultValue == "light"  && <button className="darkbtn" onClick={()=>{setColorValue("dark")}} >Dark</button>}
