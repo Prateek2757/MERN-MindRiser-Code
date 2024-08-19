@@ -1,6 +1,5 @@
 console.log("I am exposed ");
 
-
 let dbUsers = [];
 let dbUserlOGIN = [];
 // const signup = (email, password) => {
