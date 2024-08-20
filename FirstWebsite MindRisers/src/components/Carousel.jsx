@@ -1,19 +1,21 @@
 import React from 'react'
-import Lamp from "../assets/lamp_outlet_idea_electricity_120422_3840x2160.jpg";
+import I15pm from "../assets/iphone15promax.jpg";
+import G24u from "../assets/galaxys24ultra.jpg"
+import Op from "../assets/oneplus.png"
 function Carousel() {
   return (
     <>
         
-        <div id="carouselExample" classNameName="carousel slide">
-  <div className="carousel-inner">
+        <div id="carouselExample" className="carousel slide">
+  <div className="carousel-inner m-2  ">
     <div className="carousel-item active">
-      <img src={Lamp} className="w-100 h-25" alt="..."/>
+      <img src={G24u} className="w-100  "  style={{maxHeight : '675px', filter : 'brightness(40%)' }} alt="..."/>
     </div>
     <div className="carousel-item">
-      <img src="" className="d-block w-100" alt="..."/>
+    <img src={I15pm} className="w-100  "  style={{maxHeight : '675px', filter : 'brightness(40%)' }} alt="..."/>
     </div>
     <div className="carousel-item">
-      <img src="..." className="d-block w-100" alt="..."/>
+    <img src={Op} className="w-100  "  style={{maxHeight : '675px', filter : 'brightness(40%)' }} alt="..."/>
     </div>
   </div>
   <button className="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">

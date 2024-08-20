@@ -4,8 +4,13 @@ import Navbar from "./components/Navbar";
 import Alert from "./components/Alert";
 import Serviceitems from "./components/Serviceitems";
 import Carousel from "./components/Carousel";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Home from "./Home";
 
 function App() {
+  const apiKey = import.meta.env.VITE_API_KEY;
+  console.log("Apikey", apiKey);
+
   const [mode, setMode] = useState("light");
   const [text, setButtonText] = useState("Enable Dark");
   const [alert, setAlert] = useState(null);
@@ -32,14 +37,19 @@ function App() {
     }
   };
   return (
-         
-      <div className={`bg-${mode} vh-100`}>
-        <Navbar mode={mode} text={text} toggleMode={toggleMode} />
-        <Alert alert={alert} showAlert={showAlert} />
-        <Carousel/>
-        <Serviceitems />
-      </div>
-  
+    <>
+      <Router>
+        <div className={`bg-${mode} min-vh-100`}>
+          <Navbar mode={mode} text={text} toggleMode={toggleMode} />
+          <Alert alert={alert} showAlert={showAlert} />
+
+          <Routes>
+            <Route path="/blogs" element={<Serviceitems apiKey={apiKey} />} />
+            <Route path="/home" element={<Home />} />
+          </Routes>
+        </div>
+      </Router>
+    </>
   );
 }
 
