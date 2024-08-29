@@ -9,6 +9,9 @@ app.get("/", (req, res) => {
   res.send("Hello jhapa");
 
 });
+//api create 
+app.use('/api/auth',require('./Routes/Auth'))
+
 app.listen(port, () => {
     console.log("App is Listening on port",port);
     

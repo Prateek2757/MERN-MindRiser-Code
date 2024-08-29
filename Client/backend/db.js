@@ -8,6 +8,7 @@ const dbConnect = ()=>{
         console.log("Connected SucessFully");
         
     })
+    
 }
 
 module.exports = dbConnect
