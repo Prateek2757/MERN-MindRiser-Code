@@ -11,6 +11,8 @@ app.get("/", (req, res) => {
 });
 //api create 
 app.use('/api/auth',require('./Routes/Auth'))
+app.use('/api/loginauth',require('./Routes/LoginAuth'))
+
 
 app.listen(port, () => {
     console.log("App is Listening on port",port);
