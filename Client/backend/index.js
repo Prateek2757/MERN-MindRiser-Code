@@ -11,6 +11,7 @@ app.get("/", (req, res) => {
 });
 //api create 
 app.use('/api/auth',require('./Routes/Auth'))
+app.use('/api/product',require('./Routes/Product'))
 app.use('/api/loginauth',require('./Routes/LoginAuth'))
 
 

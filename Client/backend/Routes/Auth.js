@@ -6,6 +6,7 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { body, validationResult } = require("express-validator");
+const fetchuser = require('../middleware/featchuser');
 
 const JWT_Secret= process.env.JWT_SECRET_KEY;
 console.log(JWT_Secret);
@@ -106,5 +107,14 @@ router.post(
       res.status(500).send("Internal Server error");
      }
     })
+router.get('/getuser',fetchuser,async(req,res)=>{
+  try {
+    const userId = req.user.id;
+     const user = await User.findById(userId).select("-password")
+     res.send(user)
+  } catch (error) {
+    res.status(500).send("Internal Server error");  
+  }
+})
 
 module.exports = router;
