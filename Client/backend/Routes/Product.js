@@ -4,6 +4,7 @@ const fetchuser = require("../middleware/featchuser");
 const { body, validationResult } = require("express-validator");
 const router = express.Router();
 
+//fetch all product
 router.get("/getall", fetchuser, async (req, res) => {
   try {
     const products = await Product.find({ user: req.user.id });//user vaneko modal user ko ref ho product ko user id ra user ko id milo vaney tesko data fecth garney
@@ -55,7 +56,7 @@ router.put("/updateproduct/:id", fetchuser, async (req, res) => {
     if(!product){
         return res.status(406).send('not found')
     }
-    if(!product.user ||product.user.toString()!==req.user.id){
+    if(!product.user || product.user.toString()!==req.user.id){
         return res.status(406).send('not Allowed')
     }
     product = await Product.findByIdAndUpdate(req.params.id,{$set:newProduct},{new:true})
@@ -64,4 +65,21 @@ router.put("/updateproduct/:id", fetchuser, async (req, res) => {
     return res.status(406).send('Internal Server Error')
   }
 });
+   //deleting product
+   router.delete('/deleteproduct/:id',fetchuser,async(req,res)=>{
+            try {
+              let product = await Product.findById(req.params.id)
+              if(!product){
+                  return res.status(404).send('not found')
+              }
+              if(product.user.toString()!==req.user.id){
+                return res.status(401).send('not allowed')
+              }
+              product = await Product.findByIdAndDelete(req.params.id)
+              res.json({"Success":"Product has been deleted",product:product})
+            } catch (error) {
+              return res.status(400).send('Internal Server Error')
+            }
+   })
+
 module.exports = router;
