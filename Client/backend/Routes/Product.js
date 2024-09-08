@@ -3,7 +3,7 @@ const Product = require("../Modal/Product");
 const fetchuser = require("../middleware/featchuser");
 const { body, validationResult } = require("express-validator");
 const router = express.Router();
-
+2.
 //fetch all product
 router.get("/getall", fetchuser, async (req, res) => {
   try {
