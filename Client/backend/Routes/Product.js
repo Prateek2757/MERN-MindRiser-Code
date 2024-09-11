@@ -22,17 +22,25 @@ router.post(
     body("description").isLength({ min: 5 }),
   ],
   async (req, res) => {
+    console.log(("req.files",req.files));
+    console.log((('this is our product', req.body)));
+    
+    
     try {
       const { title, description, price, instock } = req.body;
       const error = validationResult(req);
       if (!error.isEmpty()) {
         res.status(400).json({ error: error.array() });
       }
+      let images = req.files.map(el=>{
+         return el.filename
+      })
       const product = new Product({
-        title,
+        title, 
         description,
         price,
         instock,
+        images,
         user: req.user.id,
       });
       const savedProduct = await product.save();
